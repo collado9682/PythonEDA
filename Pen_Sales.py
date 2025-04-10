@@ -36,3 +36,25 @@ plt.grid(True)
 plt.xticks(rotation=0)
 plt.show()
 
+#INCISO 2
+#Análisis de costos de envío
+#Tarea: Evalúe cómo varían los costos de envío entre pedidos.
+#Pasos:
+#Calcular la distribución del Costo de Envío.
+#Agrupe por artículo y calcule el costo promedio de envío.
+#Cree un gráfico de barras que compare los costos de envío por tipo de bolígrafo.
+#Visualización: 📊 Gráfico de barras (costo promedio de envío por artículo)
+
+#Calcular la distribución del Costo de Envío.
+df_avg_pen_costs= df_pen_sales.groupby("Item")["Shipping Cost"].mean().sort_values()
+
+print(df_avg_pen_costs)
+
+#Cree un gráfico de barras que compare los costos de envío por tipo de bolígrafo.
+plt.figure(figsize=(10, 5))
+df_avg_pen_costs.plot(kind="barh", color="purple")
+plt.title("Costo de envio promedio por producto")
+plt.xlabel("Costo medio de envio")
+plt.ylabel("Tipo de Producto")
+plt.show()
+
