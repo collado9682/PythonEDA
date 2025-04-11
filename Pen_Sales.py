@@ -63,3 +63,15 @@ plt.xlabel("Costo medio de envio")
 plt.ylabel("Tipo de Producto")
 plt.show()
 
+#INCISO 3
+#Ranking de popularidad de bolígrafos
+#Tarea: Identificar el tipo de bolígrafo que se compra con más frecuencia.
+#Pasos:
+#Cuente el número de compras por artículo.
+#Ordenar en orden descendente.
+#Traza un gráfico de barras horizontales para mayor claridad.
+#Visualización: 📊 Gráfico de barras horizontales (bolígrafos más vendidos)
+
+#Cuente el número de compras por artículo.
+Conteo_de_productos= df_pen_sales ["Item"].value_counts()
+
