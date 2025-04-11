@@ -61,6 +61,7 @@ df_avg_pen_costs.plot(kind="barh", color="purple")
 plt.title("Costo de envio promedio por producto")
 plt.xlabel("Costo medio de envio")
 plt.ylabel("Tipo de Producto")
+plt.tight_layout()
 plt.show()
 
 #INCISO 3
@@ -83,6 +84,7 @@ Conteo_de_productos.plot(kind="barh", color="green")
 plt.title("Ranking de popularidad de productos")
 plt.xlabel("Cantidad de ventas")
 plt.ylabel("Tipo de Producto")
+plt.tight_layout()
 plt.show()
 
 #INCISO 4
@@ -109,4 +111,12 @@ Tiempo_medio_entrega= df_pen_sales.groupby("Item") ["Tiempo de entrega"].mean().
 
 print(Tiempo_medio_entrega)
 
-
+#Traza un gráfico de barras para comparar los tiempos de entrega.
+plt.figure(figsize=(10, 5))
+Tiempo_medio_entrega.plot(kind="bar", color="orange")
+plt.title("Tiempo medio entrega de productos")
+plt.xlabel("Tipo de Producto")
+plt.ylabel("Tiempo medio de entrega (días)")
+plt.xticks(rotation=45, ha="right")
+plt.tight_layout()
+plt.show()
