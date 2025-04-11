@@ -75,3 +75,14 @@ plt.show()
 #Cuente el número de compras por artículo.
 Conteo_de_productos= df_pen_sales ["Item"].value_counts()
 
+print(Conteo_de_productos)
+
+#Traza un gráfico de barras horizontales para mayor claridad.
+plt.figure(figsize=(10, 5))
+Conteo_de_productos.plot(kind="barh", color="green")
+plt.title("Ranking de popularidad de productos")
+plt.xlabel("Cantidad de ventas")
+plt.ylabel("Tipo de Producto")
+plt.show()
+
+
