@@ -28,3 +28,14 @@ df_pen_sales["Tiempo de entrega"] = Tiempo_de_entrega
 Tiempo_medio_entrega = df_pen_sales.groupby("Item") ["Tiempo de entrega"].mean().sort_values()
 
 print(Tiempo_medio_entrega)
+
+
+#Traza un gráfico de barras para comparar los tiempos de entrega.
+plt.figure(figsize=(10, 5))
+Tiempo_medio_entrega.plot(kind="bar", color="orange")
+plt.title("Tiempo medio entrega de productos")
+plt.xlabel("Tipo de Producto")
+plt.ylabel("Tiempo medio de entrega (días)")
+plt.xticks(rotation=45, ha="right")
+plt.tight_layout()
+plt.show()
