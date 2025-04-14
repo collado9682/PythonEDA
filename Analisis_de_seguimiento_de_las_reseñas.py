@@ -19,11 +19,17 @@ df_pen_sales= pd.read_excel(file_path,sheet_name="Pen Sales")
 # Realizar un análisis básico de sentimientos (contar las apariciones de palabras positivas como amor, genial, bueno frente a palabras negativas como malo, disgusto).
 reviews= df_pen_sales["Review"]
 
-print(reviews)
+#print(reviews)
 
 reseñas_positivas= ["love","great","good","excellent","best","amazing"]
-reseñas_negativas=["bad","poor","dislike","terrible","worst"]
+reseñas_negativas=["bad","poor","dislike","terrible","worst","disappointed","Unfortunately"]
 
 contar_reseñas_positivas= reviews.str.contains("|".join(reseñas_positivas), case=False, na=False).sum()
+contar_reseñas_negativas= reviews.str.contains("|".join(reseñas_negativas), case=False, na=False).sum()
+
 
 print("cantidad de reseñas positivas:" + str(contar_reseñas_positivas))
+print("cantidad de reseñas negativas:" + str(contar_reseñas_negativas))
+
+
+
