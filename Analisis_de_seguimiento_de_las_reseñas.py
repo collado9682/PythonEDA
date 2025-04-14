@@ -24,12 +24,19 @@ reviews= df_pen_sales["Review"]
 reseñas_positivas= ["love","great","good","excellent","best","amazing"]
 reseñas_negativas=["bad","poor","dislike","terrible","worst","disappointed","Unfortunately"]
 
-contar_reseñas_positivas= reviews.str.contains("|".join(reseñas_positivas), case=False, na=False).sum()
-contar_reseñas_negativas= reviews.str.contains("|".join(reseñas_negativas), case=False, na=False).sum()
+conteo_reseñas_positivas= reviews.str.contains("|".join(reseñas_positivas), case=False, na=False).sum()
+conteo_reseñas_negativas= reviews.str.contains("|".join(reseñas_negativas), case=False, na=False).sum()
 
 
-print("cantidad de reseñas positivas:" + str(contar_reseñas_positivas))
-print("cantidad de reseñas negativas:" + str(contar_reseñas_negativas))
+print("cantidad de reseñas positivas:" + str(conteo_reseñas_positivas))
+print("cantidad de reseñas negativas:" + str(conteo_reseñas_negativas))
 
+# Genere una nube de palabras o un gráfico circular de sentimientos.
+#Visualización: 🥧 Gráfico de pastel o circular (críticas positivas vs. negativas)
+
+plt.figure(figsize=(6,6))
+plt.pie([ conteo_reseñas_positivas, conteo_reseñas_negativas], labels=["Review Positivo", "Review Negativo"], autopct="%1.1f%%", colors=["blue", "red"], startangle=140)
+plt.title("Reseñas de los productos")
+plt.show()
 
 
